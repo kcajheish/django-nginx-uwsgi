@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  nginx:
+    build:
+      dockerfile: dockerfile.nginx
+    ports:
+    - '8000:8000'
+    depends_on:
+      - backend
+  backend:
+    build:
+      dockerfile: dockerfile.backend
+    ports:
+    - '8001:8001'
+    volumes:
+      - .:/app
+    depends_on:
+    - db
+    - redis
+  db:
+    image: postgres:14.10
+    environment:
+    - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ../volumes:/var/lib/postgresql/data
+    ports:
+    - '5432:5432'
+  redis:
+    image: redis:7.2.3-alpine
+    ports:
+    - '6379:6379'

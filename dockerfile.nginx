@@ -1,0 +1,8 @@
+FROM nginx
+COPY ./nginx_backend.conf /etc/nginx/conf.d
+RUN mkdir ./web
+RUN mkdir ./web/static
+COPY ./uwsgi_params ./web
+COPY ./static ./web/static
+COPY ./nginx.conf /etc/nginx/nginx.conf
+CMD ["nginx", "-g", "daemon off;"]
