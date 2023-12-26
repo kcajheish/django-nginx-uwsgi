@@ -7,7 +7,7 @@ Install docker environment
 # Getting Started
 specify folder path for postgres volume in .env
 ```
-POSTGRES_VOLUME=<your postgres volume path>
+DATABASE_VOLUME=<your postgres volume path>
 ```
 
 create folder
