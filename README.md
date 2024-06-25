@@ -1,5 +1,5 @@
 # Introduction
-It's a django, nginx and uwsgi stack template with Postgres and Redis. The whole environment is built in container so you can prototype idea without worrying about dependencies.
+It's a django, nginx and uwsgi stack template with Postgres and Redis. The whole environment is built in container.
 
 # Prerequisite
 Install docker environment
